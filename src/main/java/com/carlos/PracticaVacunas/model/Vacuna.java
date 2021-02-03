@@ -10,7 +10,6 @@ public class Vacuna {
 	private String comunidad;
 	private int pzifer;
 	private int moderna;
-	private int dosis_Total;
 	private int dosis_Administradas;
 	private int pauta_Completa;
 	private Date fecha_Ult_Vacuna;
@@ -19,14 +18,13 @@ public class Vacuna {
 
 	}
 
-	public Vacuna(int id, String comunidad, int pzifer, int moderna, int dosis_Total, int dosis_Administradas,
+	public Vacuna(int id, String comunidad, int pzifer, int moderna, int dosis_Administradas,
 			int pauta_Completa, Date fecha_Ult_Vacuna) {
 		super();
 		this.id = id;
 		this.comunidad = comunidad;
 		this.pzifer = pzifer;
 		this.moderna = moderna;
-		this.dosis_Total = dosis_Total;
 		this.dosis_Administradas = dosis_Administradas;
 		this.pauta_Completa = pauta_Completa;
 		this.fecha_Ult_Vacuna = fecha_Ult_Vacuna;
@@ -64,14 +62,6 @@ public class Vacuna {
 
 	public void setModerna(int moderna) {
 		this.moderna = moderna;
-	}
-
-	public int getdosis_Total() {
-		return dosis_Total;
-	}
-
-	public void setdosis_Total(int dosis_Total) {
-		this.dosis_Total = dosis_Total;
 	}
 
 	public int getdosis_Administradas() {

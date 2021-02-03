@@ -6,11 +6,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.carlos.PracticaVacunas.model.Vacuna;
 import com.carlos.PracticaVacunas.service.VacunaService;
+
 import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
-@CrossOrigin
 @RequestMapping("/vacunas")
 public class VacunaController {
 	@Autowired
@@ -31,12 +31,12 @@ public class VacunaController {
 		}
 	}
 
-	@PostMapping("/")
+	@PostMapping("/insertar")
 	public void add(@RequestBody Vacuna vacuna) {
 		vacunaService.saveVacuna(vacuna);
 	}
 
-	@PutMapping("/{id}")
+	@PutMapping("/modificar/{id}")
 	public ResponseEntity<?> update(@RequestBody Vacuna vacuna, @PathVariable Integer id) {
 		try {
 			Vacuna existVacuna = vacunaService.getVacuna(id);
@@ -48,8 +48,14 @@ public class VacunaController {
 		}
 	}
 
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/borrar/{id}")
 	public void delete(@PathVariable Integer id) {
 		vacunaService.deleteVacuna(id);
+	}
+
+	@GetMapping("/porcomunidad/{comunidad}")
+	public List<Vacuna> getComunidad(@PathVariable String comunidad) {
+		return vacunaService.getComunidad(comunidad);
+
 	}
 }

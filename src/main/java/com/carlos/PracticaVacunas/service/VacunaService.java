@@ -2,6 +2,7 @@ package com.carlos.PracticaVacunas.service;
 
 import com.carlos.PracticaVacunas.model.Vacuna;
 import com.carlos.PracticaVacunas.repository.VacunaRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -29,4 +30,7 @@ public class VacunaService {
 		vacunaRepository.deleteById(id);
 	}
 
+	public List<Vacuna> getComunidad(String comunidad) {
+		return vacunaRepository.findByComunidad(comunidad);
+	}
 }
