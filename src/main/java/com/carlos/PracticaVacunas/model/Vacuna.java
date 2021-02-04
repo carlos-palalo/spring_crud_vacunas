@@ -6,6 +6,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "vacunas")
 public class Vacuna {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int id;
 	private String comunidad;
 	private int pzifer;
@@ -18,8 +21,8 @@ public class Vacuna {
 
 	}
 
-	public Vacuna(int id, String comunidad, int pzifer, int moderna, int dosis_Administradas,
-			int pauta_Completa, Date fecha_Ult_Vacuna) {
+	public Vacuna(int id, String comunidad, int pzifer, int moderna, int dosis_Administradas, int pauta_Completa,
+			Date fecha_Ult_Vacuna) {
 		super();
 		this.id = id;
 		this.comunidad = comunidad;
@@ -30,8 +33,6 @@ public class Vacuna {
 		this.fecha_Ult_Vacuna = fecha_Ult_Vacuna;
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getId() {
 		return id;
 	}

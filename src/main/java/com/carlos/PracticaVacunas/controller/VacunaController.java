@@ -1,11 +1,11 @@
 package com.carlos.PracticaVacunas.controller;
 
+import com.carlos.PracticaVacunas.model.Vacuna;
+import com.carlos.PracticaVacunas.service.VacunaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.carlos.PracticaVacunas.model.Vacuna;
-import com.carlos.PracticaVacunas.service.VacunaService;
 
 import java.util.List;
 import java.util.NoSuchElementException;
